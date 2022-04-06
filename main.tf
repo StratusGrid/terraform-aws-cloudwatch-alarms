@@ -1,12 +1,7 @@
-resource "aws_iam_role" "example_resource" {
-  name               = var.name // <= You may need to append to the name string in a name field to avoid conflicts
-  assume_role_policy = <<EOF
-{
-   "Version": "2012-10-17",
-   "Statement": [
-   ]
-}
-EOF
+# Resource to create a SNS topic encrypted with KMS
+resource "aws_sns_topic" "this" {
+  name              = "${var.name_prefix}-security${var.name_suffix}"
+  kms_master_key_id = var.create_kms_key == true ? aws_kms_key.this[0].arn : data.aws_kms_key.this[0].arn
 
-  tags = local.tags // <= Note the use of local.tags
+  tags = local.tags
 }
