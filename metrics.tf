@@ -7,9 +7,10 @@ resource "aws_cloudwatch_log_metric_filter" "root_account_usage" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "RootAccountUsageEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "RootAccountUsageEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -20,9 +21,10 @@ resource "aws_cloudwatch_log_metric_filter" "console_sign_in_without_mfa" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "ConsoleSignInWithoutMfaCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "ConsoleSignInWithoutMfaCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -33,9 +35,10 @@ resource "aws_cloudwatch_log_metric_filter" "aws_authorization_failures" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "AuthorizationFailureCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "AuthorizationFailureCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -46,9 +49,10 @@ resource "aws_cloudwatch_log_metric_filter" "aws_console_sign_in_failures" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "ConsoleSigninFailureCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "ConsoleSigninFailureCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -59,9 +63,10 @@ resource "aws_cloudwatch_log_metric_filter" "iam_auth_config_changes" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "IAMPolicyEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "IAMPolicyEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -72,9 +77,10 @@ resource "aws_cloudwatch_log_metric_filter" "organizations_changes" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "OrganizationsEvents"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "OrganizationsEvents"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -87,9 +93,10 @@ resource "aws_cloudwatch_log_metric_filter" "vpc_gateway_config_changes" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "GatewayEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "GatewayEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -100,9 +107,10 @@ resource "aws_cloudwatch_log_metric_filter" "security_group_config_changes" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "SecurityGroupEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "SecurityGroupEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -113,9 +121,10 @@ resource "aws_cloudwatch_log_metric_filter" "vpc_network_config_changes" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "VpcEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "VpcEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -126,13 +135,12 @@ resource "aws_cloudwatch_log_metric_filter" "route_table_config_changes" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "RouteTableEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "RouteTableEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
-
-
 
 # Metrics related to other services
 
@@ -143,9 +151,10 @@ resource "aws_cloudwatch_log_metric_filter" "aws_cloudtrail_changes" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "CloudTrailEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "CloudTrailEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -156,9 +165,10 @@ resource "aws_cloudwatch_log_metric_filter" "ec2_instance_status_changes" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "EC2InstanceEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "EC2InstanceEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -169,9 +179,10 @@ resource "aws_cloudwatch_log_metric_filter" "launch_ec2_large_instances" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "EC2LargeInstanceEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "EC2LargeInstanceEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -182,9 +193,10 @@ resource "aws_cloudwatch_log_metric_filter" "s3_bucket_config_changes" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "S3BucketEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "S3BucketEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
 
@@ -195,9 +207,9 @@ resource "aws_cloudwatch_log_metric_filter" "aws_cmk_changes" {
   log_group_name = var.log_group_name
 
   metric_transformation {
-    name      = "CMKEventCount"
-    namespace = "CloudTrailMetrics"
-    value     = "1"
+    name          = "CMKEventCount"
+    namespace     = "CloudTrailMetrics"
+    default_value = "0"
+    value         = "1"
   }
 }
-
