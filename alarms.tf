@@ -7,7 +7,7 @@ resource "aws_cloudwatch_metric_alarm" "root_account_usage" {
   namespace           = aws_cloudwatch_log_metric_filter.root_account_usage.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if the Root account has logged in the AWS Accounts"
 }
 
@@ -20,7 +20,7 @@ resource "aws_cloudwatch_metric_alarm" "console_sign_in_without_mfa" {
   namespace           = aws_cloudwatch_log_metric_filter.console_sign_in_without_mfa.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if someone has logged in the AWS Console without MFA"
 }
 
@@ -33,7 +33,7 @@ resource "aws_cloudwatch_metric_alarm" "aws_authorization_failures" {
   namespace           = aws_cloudwatch_log_metric_filter.aws_authorization_failures.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are authorization failures in AWS"
 }
 
@@ -46,7 +46,7 @@ resource "aws_cloudwatch_metric_alarm" "aws_console_sign_in_failures" {
   namespace           = aws_cloudwatch_log_metric_filter.aws_console_sign_in_failures.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are AWS Console sign in failures"
 }
 
@@ -59,7 +59,7 @@ resource "aws_cloudwatch_metric_alarm" "iam_auth_config_changes" {
   namespace           = aws_cloudwatch_log_metric_filter.iam_auth_config_changes.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are IAM Auth changes"
 }
 
@@ -72,7 +72,7 @@ resource "aws_cloudwatch_metric_alarm" "organizations_changes" {
   namespace           = aws_cloudwatch_log_metric_filter.organizations_changes.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are changes in AWS Organizations"
 }
 
@@ -85,7 +85,7 @@ resource "aws_cloudwatch_metric_alarm" "vpc_gateway_config_changes" {
   namespace           = aws_cloudwatch_log_metric_filter.vpc_gateway_config_changes.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are changes in VPC Gateway configuration"
 }
 
@@ -98,7 +98,7 @@ resource "aws_cloudwatch_metric_alarm" "security_group_config_changes" {
   namespace           = aws_cloudwatch_log_metric_filter.security_group_config_changes.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are changes in Security groups"
 }
 
@@ -111,7 +111,7 @@ resource "aws_cloudwatch_metric_alarm" "vpc_network_config_changes" {
   namespace           = aws_cloudwatch_log_metric_filter.vpc_network_config_changes.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are changes in VPC"
 }
 
@@ -124,7 +124,7 @@ resource "aws_cloudwatch_metric_alarm" "route_table_config_changes" {
   namespace           = aws_cloudwatch_log_metric_filter.route_table_config_changes.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are changes in the route tables of any VPC"
 }
 
@@ -137,7 +137,7 @@ resource "aws_cloudwatch_metric_alarm" "aws_cloudtrail_changes" {
   namespace           = aws_cloudwatch_log_metric_filter.aws_cloudtrail_changes.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are changes in the AWS Cloudtrail configuration"
 }
 
@@ -150,7 +150,7 @@ resource "aws_cloudwatch_metric_alarm" "ec2_instance_status_changes" {
   namespace           = aws_cloudwatch_log_metric_filter.ec2_instance_status_changes.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are changes in the status of EC2 instances"
 }
 
@@ -163,7 +163,7 @@ resource "aws_cloudwatch_metric_alarm" "launch_ec2_large_instances" {
   namespace           = aws_cloudwatch_log_metric_filter.launch_ec2_large_instances.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are any large EC2 instances launched recently"
 }
 
@@ -176,7 +176,7 @@ resource "aws_cloudwatch_metric_alarm" "s3_bucket_config_changes" {
   namespace           = aws_cloudwatch_log_metric_filter.s3_bucket_config_changes.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are any configuration changes in any S3 bucket"
 }
 
@@ -189,6 +189,6 @@ resource "aws_cloudwatch_metric_alarm" "aws_cmk_changes" {
   namespace           = aws_cloudwatch_log_metric_filter.aws_cmk_changes.metric_transformation[0].namespace
   period              = "60"
   statistic           = "Sum"
-  threshold           = "80"
+  threshold           = "1"
   alarm_description   = "This Alarm monitors if there are any configuration changes in AWS KMS Customer Managed keys"
 }
