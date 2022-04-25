@@ -65,7 +65,7 @@ resource "aws_cloudwatch_metric_alarm" "iam_auth_config_changes" {
 
 # Alarm to detect changes in AWS Organization
 resource "aws_cloudwatch_metric_alarm" "organizations_changes" {
-  alarm_name          = "${var.name_prefix}-iam-auth-config-changes-alarm${var.name_suffix}"
+  alarm_name          = "${var.name_prefix}-organizations-changes-alarm${var.name_suffix}"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = "1"
   metric_name         = aws_cloudwatch_log_metric_filter.organizations_changes.metric_transformation[0].name
