@@ -37,3 +37,28 @@ variable "kms_key_id" {
   default     = ""
   type        = string
 }
+
+# Variables related to alerting
+variable "notifications_email" {
+  description = "Email to send notifications from alerts"
+  type        = string
+}
+
+# Variables related to RTM lambda integration
+variable "rtm_enabled" {
+  description = "Variable to enable Real Time Monitoring"
+  default     = true
+  type        = bool
+}
+
+variable "integration_service" {
+  description = "Integration service for RTM system"
+  default     = "SLACK"
+  type        = string
+}
+
+variable "webhook_id" {
+  description = "Webhook ID for RTM system"
+  default     = "changeme"
+  type        = string
+}

@@ -69,4 +69,21 @@ data "aws_iam_policy_document" "kms" {
       "*"
     ]
   }
+
+  statement {
+    sid = "CloudWatchAccess"
+    principals {
+      type        = "Service"
+      identifiers = ["cloudwatch.amazonaws.com"]
+    }
+
+    actions = [
+      "kms:GenerateDataKey*",
+      "kms:Decrypt"
+    ]
+
+    resources = [
+      "*"
+    ]
+  }
 }
