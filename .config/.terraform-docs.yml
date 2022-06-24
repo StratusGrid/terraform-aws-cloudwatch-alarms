@@ -2,12 +2,12 @@ version: ""
 
 formatter: markdown table
 
-name: cloudwatch-tf-war-alarms
+name: terraform-aws-cloudwatch-alarms
 
 content: |-
-  # cloudwatch-tf-war-alarms
+  # terraform-aws-cloudwatch-alarms
 
-  GitHub: [https://github.com/StratusGrid/cloudwatch-tf-war-alarms)
+  GitHub: [https://github.com/StratusGrid/terraform-aws-cloudwatch-alarms)
 
   This module will create a bunch or rules to cover the security alarms of a Well Architected Review.
 

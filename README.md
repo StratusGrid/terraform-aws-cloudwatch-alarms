@@ -1,7 +1,7 @@
 <!-- BEGIN_TF_DOCS -->
-# cloudwatch-tf-war-alarms
+# terraform-aws-cloudwatch-alarms
 
-GitHub: [https://github.com/StratusGrid/cloudwatch-tf-war-alarms)
+GitHub: [https://github.com/StratusGrid/terraform-aws-cloudwatch-alarms)
 
 This module will create a bunch or rules to cover the security alarms of a Well Architected Review.
 
@@ -9,8 +9,8 @@ This module will create a bunch or rules to cover the security alarms of a Well 
 
 ```hcl
 # This example skips the kms_key variable as it defaults to the key provided by Data
-module "cloudwatch-tf-war-alarms" {
-  source  = "StratusGrid/cloudwatch-tf-war-alarms/aws"
+module "terraform-aws-cloudwatch-alarms" {
+  source  = "StratusGrid/terraform-aws-cloudwatch-alarms/aws"
   version = "<insert relevant version>"
 
   log_group_name = "${var.name_prefix}-name-to-use${local.name_suffix}"
@@ -20,8 +20,8 @@ module "cloudwatch-tf-war-alarms" {
 
 ```hcl
 # This example specifies a key to be used.
-module "cloudwatch-tf-war-alarms" {
-  source  = "StratusGrid/cloudwatch-tf-war-alarms/aws"
+module "terraform-aws-cloudwatch-alarms" {
+  source  = "StratusGrid/terraform-aws-cloudwatch-alarms/aws"
   version = "<insert relevant version>"
 
   log_group_name = "${var.name_prefix}-name-to-use${local.name_suffix}"
