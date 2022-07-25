@@ -76,7 +76,10 @@ module "terraform-aws-cloudwatch-alarms" {
 | [aws_cloudwatch_metric_alarm.vpc_network_config_changes](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_kms_alias.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_alias) | resource |
 | [aws_kms_key.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key) | resource |
+| [aws_lambda_alias.rtm_lambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_alias) | resource |
+| [aws_sns_topic.rtm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
 | [aws_sns_topic.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
+| [aws_sns_topic_subscription.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription) | resource |
 
 ## Inputs
 
@@ -84,10 +87,14 @@ module "terraform-aws-cloudwatch-alarms" {
 |------|-------------|------|---------|:--------:|
 | <a name="input_create_kms_key"></a> [create\_kms\_key](#input\_create\_kms\_key) | Boolean to define if KMS key should be created or not | `bool` | `true` | no |
 | <a name="input_input_tags"></a> [input\_tags](#input\_input\_tags) | Map of tags to apply to resources | `map(string)` | <pre>{<br>  "ModuleDeveloper": "StratusGrid",<br>  "Provisioner": "Terraform"<br>}</pre> | no |
+| <a name="input_integration_service"></a> [integration\_service](#input\_integration\_service) | Integration service for RTM system | `string` | `"SLACK"` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | ID of the key to be used by Cloud Trail to encrypt the logs | `string` | `""` | no |
 | <a name="input_log_group_name"></a> [log\_group\_name](#input\_log\_group\_name) | Name of the CloudWatch Log Group where the events are being recorded | `string` | n/a | yes |
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | Name to prepend to all resource names within module | `string` | n/a | yes |
 | <a name="input_name_suffix"></a> [name\_suffix](#input\_name\_suffix) | Name to append to all resource names within module | `string` | `""` | no |
+| <a name="input_notifications_email"></a> [notifications\_email](#input\_notifications\_email) | Email to send notifications from alerts | `string` | n/a | yes |
+| <a name="input_rtm_enabled"></a> [rtm\_enabled](#input\_rtm\_enabled) | Variable to enable Real Time Monitoring | `bool` | `true` | no |
+| <a name="input_webhook_id"></a> [webhook\_id](#input\_webhook\_id) | Webhook ID for RTM system | `string` | `"changeme"` | no |
 
 ## Outputs
 
