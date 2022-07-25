@@ -10,7 +10,7 @@ This module will create multiple rules to cover the security alarms of a Well Ar
 ```hcl
 # This example skips the kms_key variable as it defaults to the key provided by Data
 module "terraform-aws-cloudwatch-alarms" {
-  source  = "StratusGrid/terraform-aws-cloudwatch-alarms/aws"
+  source  = "StratusGrid/cloudwatch-alarms/aws"
   version = "<insert relevant version>"
 
   log_group_name = "${var.name_prefix}-name-to-use${local.name_suffix}"
@@ -21,7 +21,7 @@ module "terraform-aws-cloudwatch-alarms" {
 ```hcl
 # This example specifies a key to be used.
 module "terraform-aws-cloudwatch-alarms" {
-  source  = "StratusGrid/terraform-aws-cloudwatch-alarms/aws"
+  source  = "StratusGrid/cloudwatch-alarms/aws"
   version = "<insert relevant version>"
 
   log_group_name = "${var.name_prefix}-name-to-use${local.name_suffix}"

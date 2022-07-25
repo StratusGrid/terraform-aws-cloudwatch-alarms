@@ -1,6 +1,6 @@
 # This example specifies a key to be used.
 module "terraform-aws-cloudwatch-alarms" {
-  source  = "StratusGrid/terraform-aws-cloudwatch-alarms/aws"
+  source  = "StratusGrid/cloudwatch-alarms/aws"
   version = "<insert relevant version>"
 
   log_group_name = "${var.name_prefix}-name-to-use${local.name_suffix}"
