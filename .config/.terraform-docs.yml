@@ -2,22 +2,23 @@ version: ""
 
 formatter: markdown table
 
-name: template-terraform-module-starter
+name: cloudwatch-tf-war-alarms
 
 content: |-
-  # template-terraform-module-starter
+  # cloudwatch-tf-war-alarms
 
-  GitHub: [StratusGrid/template-terraform-module-starter](https://github.com/StratusGrid/template-terraform-module-starter)
+  GitHub: [https://github.com/StratusGrid/cloudwatch-tf-war-alarms)
 
-  This Repo is meant to act as a template which can be used
-  when creating new modules.
+  This module will create a bunch or rules to cover the security alarms of a Well Architected Review.
 
-  NOTE! Don't forget to change the module source repo tag in `tags.tf`!
-
-  ## Example
+  ## Examples
 
   ```hcl
-  {{ include "examples/example1.tf" }}
+  {{ include "examples/example1.tfnot" }}
+  ```
+
+  ```hcl
+  {{ include "examples/example2.tfnot" }}
   ```
 
   ---
