@@ -1,0 +1,10 @@
+# This example specifies a key to be used.
+module "terraform-aws-cloudwatch-alarms" {
+  source  = "StratusGrid/cloudwatch-alarms/aws"
+  version = "<insert relevant version>"
+
+  log_group_name = "${var.name_prefix}-name-to-use${local.name_suffix}"
+  create_kms_key = false
+  kms_key_id     = "arn:aws:kms:region:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+  input_tags     = merge(local.common_tags, {})
+}
