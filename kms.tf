@@ -5,7 +5,8 @@ resource "aws_kms_key" "this" {
   count                   = var.create_kms_key ? 1 : 0
   description             = "KMS used to encrypt SNS messages in rest"
   deletion_window_in_days = 10
-  enable_key_rotation     = true
+
+  enable_key_rotation = true
 
   policy = data.aws_iam_policy_document.kms[0].json
 
@@ -59,6 +60,23 @@ data "aws_iam_policy_document" "kms" {
     principals {
       type        = "Service"
       identifiers = ["sns.amazonaws.com"]
+    }
+
+    actions = [
+      "kms:GenerateDataKey*",
+      "kms:Decrypt"
+    ]
+
+    resources = [
+      "*"
+    ]
+  }
+
+  statement {
+    sid = "CloudWatchAccess"
+    principals {
+      type        = "Service"
+      identifiers = ["cloudwatch.amazonaws.com"]
     }
 
     actions = [
