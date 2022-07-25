@@ -6,6 +6,8 @@ resource "aws_kms_key" "this" {
   description             = "KMS used to encrypt SNS messages in rest"
   deletion_window_in_days = 10
 
+  enable_key_rotation = true
+
   policy = data.aws_iam_policy_document.kms[0].json
 
   tags = local.tags

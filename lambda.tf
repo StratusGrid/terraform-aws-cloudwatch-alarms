@@ -14,8 +14,9 @@ resource "aws_lambda_alias" "rtm_lambda" {
 }
 
 module "rtm_lambda" {
-  count            = var.rtm_enabled ? 1 : 0
-  source           = "moritzzimmer/lambda/aws"
+  count  = var.rtm_enabled ? 1 : 0
+  source = "moritzzimmer/lambda/aws"
+
   description      = "Lambda to send messages in Real Time to a webhook."
   filename         = data.archive_file.rtm_lambda[0].output_path
   function_name    = "${var.name_prefix}-rtm-monitoring${var.name_suffix}"
@@ -34,7 +35,7 @@ module "rtm_lambda" {
     topic_1 = {
       topic_arn = aws_sns_topic.rtm[0].arn
 
-      // optionally overwrite `endpoint` in case an alias should be used for the SNS subscription
+      # Optionally overwrite `endpoint` in case an alias should be used for the SNS subscription
       endpoint = aws_lambda_alias.rtm_lambda[0].arn
     }
   }
