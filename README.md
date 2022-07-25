@@ -1,9 +1,9 @@
 <!-- BEGIN_TF_DOCS -->
 # terraform-aws-cloudwatch-alarms
 
-GitHub: [https://github.com/StratusGrid/terraform-aws-cloudwatch-alarms)
+GitHub: [StratusGrid/terraform-aws-cloudwatch-alarms](https://github.com/StratusGrid/terraform-aws-cloudwatch-alarms)
 
-This module will create a bunch or rules to cover the security alarms of a Well Architected Review.
+This module will create multiple rules to cover the security alarms of a Well Architected Review.
 
 ## Examples
 
