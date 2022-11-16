@@ -1,10 +1,7 @@
-# Local .terraform directories
-**/.terraform/*
-
-# .tfstate files
 *.tfstate
 *.tfstate.*
 
+.terraform
 # Lock File
 .terraform.lock.**
 
@@ -43,3 +40,6 @@ override.tf.json
 # IntelliJ
 .idea/workspace.xml
 .idea
+
+.pre-commit-config.yaml
+.prettierignore
