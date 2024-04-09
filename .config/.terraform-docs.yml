@@ -1,3 +1,5 @@
+header-from: ./.config/header.md
+
 version: ""
 
 formatter: markdown table
@@ -5,6 +7,8 @@ formatter: markdown table
 name: terraform-aws-cloudwatch-alarms
 
 content: |-
+ {{ .Header }}
+
   # terraform-aws-cloudwatch-alarms
 
   GitHub: [StratusGrid/terraform-aws-cloudwatch-alarms](https://github.com/StratusGrid/terraform-aws-cloudwatch-alarms)
@@ -37,6 +41,7 @@ content: |-
 
 sections:
   show:
+    - header
     - requirements
     - resources
     - inputs

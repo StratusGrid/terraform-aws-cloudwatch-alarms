@@ -1,14 +1,25 @@
 <!-- BEGIN_TF_DOCS -->
-# terraform-aws-cloudwatch-alarms
+<p align="center">                                                                                                                                            
+                                                                                
+  <img src="https://github.com/StratusGrid/terraform-readme-template/blob/main/header/stratusgrid-logo-smaller.jpg?raw=true" />
+  <p align="center">                                                           
+    <a href="https://stratusgrid.com/book-a-consultation">Contact Us Test</a> |                  
+    <a href="https://stratusgrid.com/cloud-cost-optimization-dashboard">Stratusphere FinOps</a> |
+    <a href="https://stratusgrid.com">StratusGrid Home</a> |
+    <a href="https://stratusgrid.com/blog">Blog</a>
+  </p>                    
+</p>
 
-GitHub: [StratusGrid/terraform-aws-cloudwatch-alarms](https://github.com/StratusGrid/terraform-aws-cloudwatch-alarms)
+ # terraform-aws-cloudwatch-alarms
 
-This module will create multiple rules to cover the security alarms of a Well Architected Review.
+ GitHub: [StratusGrid/terraform-aws-cloudwatch-alarms](https://github.com/StratusGrid/terraform-aws-cloudwatch-alarms)
 
-## Examples
+ This module will create multiple rules to cover the security alarms of a Well Architected Review.
 
-```hcl
-# This example skips the kms_key variable as it defaults to the key provided by Data
+ ## Examples
+
+ ```hcl
+ # This example skips the kms_key variable as it defaults to the key provided by Data
 module "terraform-aws-cloudwatch-alarms" {
   source  = "StratusGrid/cloudwatch-alarms/aws"
   version = "<insert relevant version>"
@@ -16,10 +27,10 @@ module "terraform-aws-cloudwatch-alarms" {
   log_group_name = "${var.name_prefix}-name-to-use${local.name_suffix}"
   input_tags     = merge(local.common_tags, {})
 }
-```
+ ```
 
-```hcl
-# This example specifies a key to be used.
+ ```hcl
+ # This example specifies a key to be used.
 module "terraform-aws-cloudwatch-alarms" {
   source  = "StratusGrid/cloudwatch-alarms/aws"
   version = "<insert relevant version>"
@@ -29,18 +40,18 @@ module "terraform-aws-cloudwatch-alarms" {
   kms_key_id     = "arn:aws:kms:region:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
   input_tags     = merge(local.common_tags, {})
 }
-```
+ ```
 
----
+ ---
 
-## Requirements
+ ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.75 |
 
-## Resources
+ ## Resources
 
 | Name | Type |
 |------|------|
@@ -78,7 +89,7 @@ module "terraform-aws-cloudwatch-alarms" {
 | [aws_kms_key.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key) | resource |
 | [aws_sns_topic.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
 
-## Inputs
+ ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -89,11 +100,11 @@ module "terraform-aws-cloudwatch-alarms" {
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | Name to prepend to all resource names within module | `string` | n/a | yes |
 | <a name="input_name_suffix"></a> [name\_suffix](#input\_name\_suffix) | Name to append to all resource names within module | `string` | `""` | no |
 
-## Outputs
+ ## Outputs
 
 No outputs.
 
----
+ ---
 
-Note, manual changes to the README will be overwritten when the documentation is updated. To update the documentation, run `terraform-docs -c .config/.terraform-docs.yml`
+ Note, manual changes to the README will be overwritten when the documentation is updated. To update the documentation, run `terraform-docs -c .config/.terraform-docs.yml`
 <!-- END_TF_DOCS -->
